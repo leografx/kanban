@@ -1,3 +1,56 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+
+<template #itemTemplate let-item="item" let-index="index">
+  <div class="container">
+    <div class="card">
+      <h3>{{item.value.job_no}} </h3> 
+       <p>{{item.value.customer}} </p>
+      <p>{{item.value.name}}<br/>
+        <small>{{ item.value.ship_date }}</small>
+       </p>
+    </div>
+  </div>
+</template>
+
+
+
+
+<h2>JOBS</h2>
+<bs-sortable
+  [(ngModel)]="jobs"
+  [itemTemplate]="itemTemplate"
+  itemClass="sortable-item"
+  itemActiveClass="sortable-item-active"
+  placeholderItem="Drag here"
+  placeholderClass="placeholderStyle card"
+  wrapperClass="sortable-wrapper container"
+></bs-sortable>
+
+
+
+<h2>Prepress</h2>
+<bs-sortable
+  [(ngModel)]="prepress"
+  [itemTemplate]="itemTemplate"
+  itemClass="sortable-item"
+  itemActiveClass="sortable-item-active"
+  placeholderItem="Drag Job here"
+  placeholderClass="sortable-item card "
+  wrapperClass="sortable-wrapper container"
+></bs-sortable>
+
+<h2>RYOBI</h2>
+<bs-sortable
+  [(ngModel)]="ryobi"
+  [itemTemplate]="itemTemplate"
+  itemClass="sortable-item"
+  itemActiveClass="sortable-item-active"
+  placeholderItem="Drag Job here"
+  placeholderClass="sortable-item card "
+  wrapperClass="sortable-wrapper container"
+></bs-sortable>
+
+
+
+
+
