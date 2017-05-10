@@ -1,10 +1,13 @@
 .card h3{
+	font-family: "arial narrow";
+	font-weight: bold;
 	padding-top:20px;
 	text-align: center;
 	transform: rotate(-3deg);
 }
 
 .card p{
+	font-family: "arial narrow";
 	margin: 20px;
 	transform: rotate(-3deg);
 }

@@ -1,4 +1,5 @@
 <h1>{{title}}</h1>
+<input type="text" (keyup)="filter(data.value)" #data>
 
 <template #itemTemplate let-item="item" let-index="index">
   <div class="container">
@@ -15,7 +16,7 @@
 
 
 
-<h2>JOBS</h2>
+<h2>JOBS ({{jobs.length}})</h2>
 <bs-sortable
   [(ngModel)]="jobs"
   [itemTemplate]="itemTemplate"
@@ -28,7 +29,7 @@
 
 
 
-<h2>Prepress</h2>
+<h2>Prepress ({{prepress.length}}) </h2>
 <bs-sortable
   [(ngModel)]="prepress"
   [itemTemplate]="itemTemplate"
@@ -39,7 +40,7 @@
   wrapperClass="sortable-wrapper container"
 ></bs-sortable>
 
-<h2>RYOBI</h2>
+<h2>RYOBI ({{ryobi.length}})</h2>
 <bs-sortable
   [(ngModel)]="ryobi"
   [itemTemplate]="itemTemplate"
