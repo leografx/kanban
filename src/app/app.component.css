@@ -11,3 +11,11 @@
 	margin: 20px;
 	transform: rotate(-3deg);
 }
+
+.btn-danger{
+	position: relative;
+	left:140px;
+	top:15px;
+	right:10px;
+	color:red;
+}

@@ -1,21 +1,25 @@
 <h1>{{title}}</h1>
-<input type="text" (keyup)="filter(data.value)" #data>
+<button type="button" (click)="login()" class="btn btn-primary">Login</button>
+<input type="text" [(ngModel)]="data">
+<button type="button" (click)="addSticky()" class="btn btn-primary">New</button>
 
-<template #itemTemplate let-item="item" let-index="index">
+<div>
   <div class="container">
-    <div class="card">
-      <h3>{{item.value.job_no}} </h3> 
-       <p>{{item.value.customer}} </p>
-      <p>{{item.value.name}}<br/>
-        <small>{{ item.value.ship_date }}</small>
+  
+    <div class="card" *ngFor="let item of jobs |async" >
+      <a class="btn-danger btn btn-link remove glyphicon glyphicon-remove" (click)="delete(item)"></a>
+      <h3>{{item.job_no}} </h3> 
+       <p>{{item.customer}} </p>
+      <p>{{item.name}}<br/>
+        <small>{{ item.ship_date }}</small>
        </p>
     </div>
   </div>
-</template>
+</div>
 
 
 
-
+<!-- 
 <h2>JOBS ({{jobs.length}})</h2>
 <bs-sortable
   [(ngModel)]="jobs"
@@ -25,11 +29,11 @@
   placeholderItem="Drag here"
   placeholderClass="placeholderStyle card"
   wrapperClass="sortable-wrapper container"
-></bs-sortable>
+></bs-sortable> -->
 
 
 
-<h2>Prepress ({{prepress.length}}) </h2>
+<!-- <h2>Prepress ({{prepress.length}}) </h2>
 <bs-sortable
   [(ngModel)]="prepress"
   [itemTemplate]="itemTemplate"
@@ -38,9 +42,9 @@
   placeholderItem="Drag Job here"
   placeholderClass="sortable-item card "
   wrapperClass="sortable-wrapper container"
-></bs-sortable>
+></bs-sortable> -->
 
-<h2>RYOBI ({{ryobi.length}})</h2>
+<!-- <h2>RYOBI ({{ryobi.length}})</h2>
 <bs-sortable
   [(ngModel)]="ryobi"
   [itemTemplate]="itemTemplate"
@@ -49,7 +53,7 @@
   placeholderItem="Drag Job here"
   placeholderClass="sortable-item card "
   wrapperClass="sortable-wrapper container"
-></bs-sortable>
+></bs-sortable> -->
 
 
 

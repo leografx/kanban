@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  	production: false,
+  	angFireConfig : {
+	    apiKey: "AIzaSyDBDUsxYvvmFC_GseiKeWGN8CzhtPzGQxo",
+	    authDomain: "kanban-2e947.firebaseapp.com",
+	    databaseURL: "https://kanban-2e947.firebaseio.com",
+	    projectId: "kanban-2e947",
+	    storageBucket: "kanban-2e947.appspot.com",
+	    messagingSenderId: "592793734187"
+	}
 };
