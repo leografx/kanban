@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-//import { Dps } from './data/jobs'
 import { Observable } from 'rxjs/observable'
 import 'rxjs/add/operator/map';
 
@@ -24,7 +23,6 @@ export class AppComponent implements OnInit {
   constructor(public db: AngularFireDatabase, public afAuth: AngularFireAuth){
     this.user = afAuth.authState;
     this.jobs = this.db.list('/jobs');
-    //console.log(this.jobs.subscribe(data => console.log(data)))
   }
 
   ngOnInit(){}
